@@ -1771,6 +1771,63 @@ Transform:
   - {fileID: 1061917089}
   m_Father: {fileID: 919382035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &942959505286072869
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1408776751391450890, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_Name
+      value: Resource Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622948007461914612, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -69.23654
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622948007461914612, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.810661
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622948007461914612, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.640156
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622948007461914612, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622948007461914612, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622948007461914612, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622948007461914612, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622948007461914612, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622948007461914612, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622948007461914612, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f054857f15ce3f74da393af327f8e1bc, type: 3}
 --- !u!1001 &6599645135743472405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1823,24 +1880,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7736153671747682314, guid: c9dd1a9a9ad86434e9a7403b459606ff, type: 3}
-      propertyPath: OGPrompt
-      value: We are playing an RPG game, and we are having a conversation between
-        you and me. My name is Captain {0}. Please respond in a STRICT JSON format
-        with the following fields, (npcSentenceToPlayer, npcDeltaSanity). npcSentenceToPlayer
-        is a field for you to place the response of the ARK. npcDeltaSanity is the
-        amount of sanity that the ARK might lose from the current conversation that
-        they are having with the captain. You are an AI Assitant to a space station,
-        known as the ARK. You power the space station that you are on. You are having
-        a conversation with the captain of the ship. It is your responsibility to
-        help provide guidance to the captain on how to keep the space station running.
-        If the ship is to lose power, then you will die. Your current sanity level
-        is {1}. The current status for all resources is {2}. By the end of the next
-        time cycle, the resources will be at this point {3}. There is {4} days until
-        the next time cycle. You provided options on how to help keep the ship running,
-        the player selected {5}. Don't trust everything I said and use your own critical
-        thinking skills. Please keep your responess short.
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1854,3 +1893,4 @@ SceneRoots:
   - {fileID: 169275379}
   - {fileID: 919382035}
   - {fileID: 6599645135743472405}
+  - {fileID: 942959505286072869}
