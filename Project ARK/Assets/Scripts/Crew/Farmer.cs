@@ -9,6 +9,7 @@ public class Farmer : Crewmate
     public override void PerformDuty()
     {
         base.PerformDuty();
-        Debug.Log($"{crewmateName} farms and provides +{foodBonus} food.");
+        ResourcesManager.Instance.AddFood(foodBonus);
+        Debug.Log($"{crewmateName} provides +{foodBonus} food.");
     }
 }

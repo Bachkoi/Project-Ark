@@ -9,6 +9,7 @@ public class Navigator : Crewmate
     public override void PerformDuty()
     {
         base.PerformDuty();
-        Debug.Log($"{crewmateName} explores and provides +{explorationPointsBonus} exploration points.");
+        ResourcesManager.Instance.AddExploration(explorationPointsBonus);
+        Debug.Log($"{crewmateName} provides +{explorationPointsBonus} exploration points.");
     }
 }

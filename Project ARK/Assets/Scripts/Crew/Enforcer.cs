@@ -9,6 +9,7 @@ public class Enforcer : Crewmate
     public override void PerformDuty()
     {
         base.PerformDuty();
-        Debug.Log($"{crewmateName} guards and provides +{securityBonus} security.");
+        ResourcesManager.Instance.AddSecurity(securityBonus);
+        Debug.Log($"{crewmateName} provides +{securityBonus} security.");
     }
 }

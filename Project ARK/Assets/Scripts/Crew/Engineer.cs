@@ -9,6 +9,7 @@ public class Engineer : Crewmate
     public override void PerformDuty()
     {
         base.PerformDuty();
-        Debug.Log($"{crewmateName} maintains systems and provides +{gearBonus} gears.");
+        ResourcesManager.Instance.AddGears(gearBonus);
+        Debug.Log($"{crewmateName} provides +{gearBonus} gears.");
     }
 }

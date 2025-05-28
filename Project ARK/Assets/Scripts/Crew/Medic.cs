@@ -9,6 +9,7 @@ public class Medic : Crewmate
     public override void PerformDuty()
     {
         base.PerformDuty();
-        Debug.Log($"{crewmateName} heals and provides +{healingBonus} health.");
+        ResourcesManager.Instance.AddHealth(healingBonus);
+        Debug.Log($"{crewmateName} provides +{healingBonus} health.");
     }
 }
