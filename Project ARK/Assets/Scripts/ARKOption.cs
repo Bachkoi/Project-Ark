@@ -1,0 +1,10 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class ARKOption
+{
+    public List<string> names = new List<string>();
+    public string reason = "";
+}

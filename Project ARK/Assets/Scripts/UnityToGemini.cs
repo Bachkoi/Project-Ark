@@ -14,7 +14,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
-public enum GeminiRequestType { News, Trend, PublicReaction, Interview, GlobalEvent, None }
+public enum GeminiRequestType { Option, Conversation, None }
 
 public class UnityToGemini : MonoBehaviour
 {
@@ -69,29 +69,13 @@ public class UnityToGemini : MonoBehaviour
         //apiKey = GeminiAPIVerifier.VerifiedApiKey;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
-
     public void SendRequest(string request, GeminiRequestType type)
     {
-        StartCoroutine((SendRequestToGemini(request, type)));
+        StartCoroutine((SendRequestToGeminiCo(request, type)));
     }
 
 
-    public IEnumerator SendRequestToGemini(string request, GeminiRequestType type)
+    public IEnumerator SendRequestToGeminiCo(string request, GeminiRequestType type)
     {
 
         Debug.Log("Started API Validation Request");
@@ -157,11 +141,7 @@ public class UnityToGemini : MonoBehaviour
             }
             else
             {
-
                 GeminiResponseCallback?.Invoke(www.downloadHandler.text, type);
-
-
-
             }
         }
     }
