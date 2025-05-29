@@ -47,8 +47,10 @@ namespace Backend
         public string PromptId { get; set; }
         [JsonProperty("version")]
         public int Version { get; set; }
+#nullable enable
         [JsonProperty("text")]
         public string? Text { get; set; }
+#nullable disable
     }
 
     public class PromptResponse

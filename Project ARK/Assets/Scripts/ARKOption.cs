@@ -7,4 +7,6 @@ public class ARKOption
 {
     public List<string> names = new List<string>();
     public string reason = "";
+
+    public List<Crewmate> crewMates = new List<Crewmate>();
 }

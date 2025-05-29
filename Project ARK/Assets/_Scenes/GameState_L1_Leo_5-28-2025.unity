@@ -1131,6 +1131,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   apiKey: AIzaSyCd-5xcGgEaZ8hp9irfgavLLXnhZejMGIE
   url: 
+  arkActionURL: 
+  logTurnURL: 
+  chatEvaluateURL: 
+  putPromptURL: 
   lastJsonRequest: 
   OGPrompt: 
   updatedPrompt: 
@@ -1245,6 +1249,17 @@ Transform:
   - {fileID: 2043948309}
   m_Father: {fileID: 919382035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1630054870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1144242606373013486, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
+  m_PrefabInstance: {fileID: 5283032437293767726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1686630198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,63 +2099,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2157114971436744894, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
-      propertyPath: prompt
-      value: "We are playing a game set in a post-apocalyptic society aboard a spaceship,
-        after Earth was deemed uninhabitable. I am the captain of the spaceship,
-        and you are the AI adjutant, known as ARK, on this interstellar ark. After
-        years of sailing in space, we are running out of resources and space for
-        crew members. Thus, it's your job to give me suggestions on who we should
-        cast out for the sake of the continuation of human civilization.\nHere are
-        the stats you need to take into account:\nFuel: used for moving or turning
-        the ship. Without it, the ship will maintain its current state of motion
-        forever.\nMorale: high morale leads to better cohesion, performance, and
-        resilience.\nFood: Essential for sustaining the crew.\nGears: Ship maintenance
-        and repair, tools for specific missions, and emergency technical help.\nHealth:
-        Involves preventing and treating illness/injury, providing mental support,
-        and controlling diseases from viruses beyond Earth.\nSecurity: Ensures the
-        safety and order within the ship, as well as defense against hostile encounters
-        from outside.\nExploration: The ultimate goal for the ship is to find an
-        alternate planet to Earth where humans can survive. The exploration value
-        ensures the ship can achieve this goal.\nIt is vital to understand that these
-        elements are deeply interconnected. For example, poor food quality affects
-        health and morale, and lack of proper gear can impede exploration and compromise
-        security.\nCurrently, the ship\u2019s stats are as follows: {1}\nIf nothing
-        changes, the projected stats for the next time cycle are: {2}\nCrew members
-        have 5 major roles:\nMedic: Provides Health resources to help injured/sick
-        crew members.\nNavigator: Provides Exploration resources that would allow
-        the player to get a better understanding of what a planet has to offer.\nEnforcer:
-        Provide Security and Exploration resources.\nFarmer: Provide Food resources
-        that feed the crews.\nEngineer: Provide Gears resources to fix the ship.\nHere\u2019s
-        all the remaining crew member on the ship: {3}\n{4 Actions I have already
-        taken: \u2026}\nPlease note that I may have a different opinion than yours,
-        so you also need to consider how effective my decisions are. Here is your
-        sanity level {5}; the lower it is, the more poorly I have followed your advice.
-        If it becomes too low, you should sound more resolute\nPlease give me 3 options
-        for who we should cast out of the ship, in the following JSON format:\n[\n{\n\"names\":
-        [\"Name1\", \"Name2\"],\n\"reason\": \"Reason A\"\n},\n{\n\"names\": [\"Name3\"],\n\"reason\":
-        \"Reason B\"\n},\n{\n\"names\": [\"Name4\", \"Name5\", \"Name6\"],\n\"reason\":
-        \"Reason C\"\n}\n]"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2157114971436744894, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
-      propertyPath: shipStats
-      value: Fuel 25/100 (needs minial of 0), Morale 38/100 (needs minial of 20),
-        Gears 26/100 (needs minial of 10), Food 55/100 (needs minial of 10), Health
-        75/100 (needs minial of 30), Security 20/100 (needs minial of 10), Exploration
-        25/100 (needs minial of 0)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2157114971436744894, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
-      propertyPath: nextTimeStats
-      value: 'Fuel 15/100 , Morale 27/100, Gears 17/100, Food 40/100, Health 66/100,
-        Security 10/100, Exploration 22/100. '
-      objectReference: {fileID: 0}
-    - target: {fileID: 2157114971436744894, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
-      propertyPath: remainingCrew
-      value: Jhon, Engeneer; Dave, Farmer, Alex, Farmer; Thalvok, Security; Sarah,
-        Medic; Ben, Engineer; Priya, Navigator; Omar, Farmer; Lena, Enforcer; Kenji,
-        Engineer; Maria, Farmer; Chloe, Navigator; Marcus, Farmer; Anya, Medic; David,
-        Enforcer; Yuki, Engineer; Isabella, Medic
-      objectReference: {fileID: 0}
     - target: {fileID: 3875382667787413819, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2225,6 +2183,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ARK Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6284443410961966650, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
+      propertyPath: optionDisplayImg
+      value: 
+      objectReference: {fileID: 1630054870}
+    - target: {fileID: 6284443410961966650, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
+      propertyPath: optionDisplaySprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284443410961966650, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
+      propertyPath: optionDisplaySprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 1509222842, guid: 62861a71c7de45143a0fe6e942380d95, type: 3}
+    - target: {fileID: 6284443410961966650, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
+      propertyPath: optionDisplaySprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 20d8960ec959f8d41b860873bf144f4f, type: 3}
+    - target: {fileID: 6284443410961966650, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
+      propertyPath: optionDisplaySprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: bc1a8c92f323f8f4f90a27fa28f3d1c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
