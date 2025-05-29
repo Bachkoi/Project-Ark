@@ -13,16 +13,16 @@ public class MainUIManager : MonoBehaviour
     
     void Start()
     {
-        arkBtn.onClick.AddListener(OpenArkPanel);
-        settingBtn.onClick.AddListener(OpenSettingPanel);
+        arkBtn?.onClick.AddListener(OpenArkPanel);
+        settingBtn?.onClick.AddListener(OpenSettingPanel);
 
         
     }
 
     private void OnDisable()
     {
-        arkBtn.onClick.RemoveListener(OpenArkPanel);
-        settingBtn.onClick.RemoveListener(OpenSettingPanel);
+        arkBtn?.onClick.RemoveListener(OpenArkPanel);
+        settingBtn?.onClick.RemoveListener(OpenSettingPanel);
     }
 
     private void OpenArkPanel()

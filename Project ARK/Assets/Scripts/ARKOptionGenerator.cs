@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class ARKOptionGenerator : MonoBehaviour
 {
-    [SerializeField] private string prompt;
-    [SerializeField, ReadOnly] private string updatedPrompt;
+    [SerializeField, TextArea(10, 10)] private string prompt;
+    [SerializeField, ReadOnly, TextArea(10, 10)] private string updatedPrompt;
     
     [BoxGroup("Test"), SerializeField, TextArea(7, 7)] private string shipStats, nextTimeStats, remainingCrew;
 
@@ -26,7 +26,7 @@ public class ARKOptionGenerator : MonoBehaviour
     void Start()
     {
         UpdatePrompt();
-        UnityToGemini.Instance.SendRequest(updatedPrompt, GeminiRequestType.Option);
+        // UnityToGemini.Instance.SendRequest(updatedPrompt, GeminiRequestType.Option);
     }
     
     public void UpdatePrompt()
@@ -52,8 +52,31 @@ public class ARKOptionGenerator : MonoBehaviour
     {
         if (requestType != GeminiRequestType.Option)
             return;
+    
+        Debug.Log(rawResponse);
+        try
+        {
+            // Parse the raw response into GeminiResponse object
+            Backend.GeminiResponse response = Newtonsoft.Json.JsonConvert.DeserializeObject<Backend.GeminiResponse>(rawResponse);
         
-        
-        
+            if (response != null && response.Candidates != null && response.Candidates.Count > 0)
+            {
+                // Get the text content from the first candidate
+                string optionsJson = response.Candidates[0].Contents.Parts[0].Text;
+            
+                // Parse the options text into a list of ARKOption objects
+                options = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ARKOption>>(optionsJson);
+            
+                Debug.Log($"Successfully unpacked {options.Count} options");
+            }
+            else
+            {
+                Debug.LogError("Invalid or empty GeminiResponse structure");
+            }
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"Error unpacking option response: {ex.Message}");
+        }
     }
 }
