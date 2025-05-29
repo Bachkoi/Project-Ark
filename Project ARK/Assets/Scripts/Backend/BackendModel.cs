@@ -39,6 +39,25 @@ namespace Backend
 
     #endregion Audits
 
+    #region Prompt
+
+    public class PromptRequest
+    {
+        [JsonProperty("promptId")]
+        public string PromptId { get; set; }
+        [JsonProperty("version")]
+        public int Version { get; set; }
+        [JsonProperty("text")]
+        public string? Text { get; set; }
+    }
+
+    public class PromptResponse
+    {
+        
+    }
+    
+    #endregion Prompt
+    
 
     #region Chat
     [System.Serializable]
@@ -47,6 +66,8 @@ namespace Backend
         [JsonProperty("character")]
         public Character Character { get; set; }
 
+        [JsonProperty("playerName")]
+        public string? PlayerName { get; set; }
 
         [JsonProperty("aiRequest")]
         public GeminiRequest AiRequest { get; set; }
@@ -64,11 +85,11 @@ namespace Backend
         [JsonProperty("npcSentenceToPlayer")]
         public string NpcSentenceToPlayer { get; set; }
 
-        [JsonProperty("npcInstructionText")]
-        public string NpcInstructionText { get; set; }
+        //[JsonProperty("npcInstructionText")]
+        //public string NpcInstructionText { get; set; }
 
-        [JsonProperty("npcEmotion")]
-        public string NPCEmotion { get; set; }
+        [JsonProperty("npcSanity")]
+        public string NpcSanity { get; set; }
     }
 
     [System.Serializable]
@@ -103,7 +124,7 @@ namespace Backend
         public List<Content> Contents { get; set; }
 
         [JsonProperty("systemInstruction")]
-        public Content systemInstruction { get; set; }
+        public Content SystemInstruction { get; set; }
 
 
     }

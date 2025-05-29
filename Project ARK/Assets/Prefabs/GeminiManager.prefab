@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   apiKey: 
-  url: 
+  url: https://xd66wj4hp3.execute-api.us-east-2.amazonaws.com/Prod/
+  arkActionURL: https://xd66wj4hp3.execute-api.us-east-2.amazonaws.com/Prod/ark/actions
+  logTurnURL: https://xd66wj4hp3.execute-api.us-east-2.amazonaws.com/Prod/log/turn
+  chatEvaluateURL: https://xd66wj4hp3.execute-api.us-east-2.amazonaws.com/Prod/chat/evaluate
+  putPromptURL: https://xd66wj4hp3.execute-api.us-east-2.amazonaws.com/Prod/prompt
   lastJsonRequest: 
   OGPrompt: We are playing a role playing game, and we are currently having a conversation.
     My name is Captain {0}. Please respond in a STRICT JSON format with the following

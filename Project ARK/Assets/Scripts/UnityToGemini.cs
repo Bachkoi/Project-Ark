@@ -21,6 +21,12 @@ public class UnityToGemini : MonoBehaviour
     // Necessary information for Gemini
     [BoxGroup("Gemini Info")] public string apiKey;
     [BoxGroup("Gemini Info")] public string url;
+    [BoxGroup("Gemini Info")] public string arkActionURL;
+    [BoxGroup("Gemini Info")] public string logTurnURL;
+    [BoxGroup("Gemini Info")] public string chatEvaluateURL;
+    [BoxGroup("Gemini Info")] public string putPromptURL;
+    
+    
     [BoxGroup("Gemini Info")] public string lastJsonRequest;
     [BoxGroup("Gemini Info")] public string OGPrompt;
     [BoxGroup("Gemini Info")] public string updatedPrompt;
@@ -67,6 +73,25 @@ public class UnityToGemini : MonoBehaviour
 
         // Set the API key
         //apiKey = GeminiAPIVerifier.VerifiedApiKey;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+
+    }
+
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            StartCoroutine(UpdatePrompts("test", GeminiRequestType.None));
+        }
+
     }
 
     public void SendRequest(string request, GeminiRequestType type)
@@ -194,6 +219,90 @@ public class UnityToGemini : MonoBehaviour
             }
         }
     }
+    
+    
+    public IEnumerator UpdatePrompts(string request, GeminiRequestType type)
+    {
+
+        Debug.Log("Started Prompt Update Request");
+        string url = "";
+
+        //url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + apiKey;
+        url = putPromptURL;
+
+        PromptRequest promptRequest = new PromptRequest();
+        promptRequest.PromptId = "chatPrompt";
+        promptRequest.Version = 1;
+        UpdatePrompt();
+        promptRequest.Text = updatedPrompt;
+        // Serialize the object to JSON
+        // Backend.GeminiRequest geminiRequest = new Backend.GeminiRequest();
+        // geminiRequest.Contents = new List<Backend.Content>();
+        // List<Backend.Part> tempParts = new List<Backend.Part>();
+        // Backend.Part tempPart = new Backend.Part("\"text\":\"" + request + "\"");
+        // tempParts.Add(tempPart);
+        // Backend.Content tempContent = new Backend.Content();
+        // tempContent.Role = "user";
+        // tempContent.Parts = tempParts;
+        // geminiRequest.Contents.Add(tempContent);
+
+        string jsonData = JsonConvert.SerializeObject(promptRequest, new JsonSerializerSettings
+        {
+            NullValueHandling = NullValueHandling.Ignore
+        });
+        Debug.Log("JSON DATA: " + jsonData);
+        byte[] jsonToSend = Encoding.UTF8.GetBytes(jsonData);
+        using (UnityWebRequest www = new UnityWebRequest(url, "PUT"))
+        {
+            www.uploadHandler = new UploadHandlerRaw(jsonToSend);
+            www.downloadHandler = new DownloadHandlerBuffer();
+            www.SetRequestHeader("Content-Type", "application/json");
+
+
+            // Send the request
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError(www.error);
+                //resultText.text = www.error;
+
+                Debug.LogError(www.error);
+                //errorMessage = www.error;
+                GeminiErrorResponse geminiErrorResponse = new GeminiErrorResponse();
+                geminiErrorResponse = JsonConvert.DeserializeObject<GeminiErrorResponse>(www.downloadHandler.text);
+                geminiErrorResponse = UnpackGeminiErrorResponse(www.downloadHandler.text);
+                if (geminiErrorResponse != null)
+                {
+                    if (geminiErrorResponse.Error != null)
+                    {
+                        if (!String.IsNullOrEmpty(geminiErrorResponse.Error.Details[0].Violations[0].QuotaId))
+                        {
+                            Debug.Log(geminiErrorResponse.Error.Details[0].Violations[0].QuotaId);
+
+                        }
+                        else
+                        {
+                            Debug.Log(www.error);
+                        }
+                    }
+
+                }
+                UponWebError();
+                // Here is where we would relay to the user the reason as to why their key didn't validate (no tokens, wrong format, illegal key, etc)
+            }
+            else
+            {
+
+                //GeminiResponseCallback?.Invoke(www.downloadHandler.text, type);
+
+
+
+            }
+        }
+    }
+    
+    
 
     #region Unpack Responses
     public GeminiResponse UnpackGeminiResponse(string rawResponse)
