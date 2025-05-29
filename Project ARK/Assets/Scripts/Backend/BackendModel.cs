@@ -12,8 +12,11 @@ namespace Backend
     {
         [JsonProperty("username")]
         public string Username { get; set; }
+        
+#nullable enable
         [JsonProperty("prompt")]
         public string? Prompt { get; set; }
+#nullable disable
     }
 
     public class AuditResponse
@@ -27,8 +30,10 @@ namespace Backend
         [JsonProperty("errorCode")]
         public GeminiErrorCode? ErrorCode { get; set; }
         
+#nullable enable
         [JsonProperty("errorMessage")]
         public string? ErrorMessage { get; set; }
+#nullable disable
     }
 
 
@@ -46,9 +51,10 @@ namespace Backend
         [JsonProperty("aiRequest")]
         public GeminiRequest AiRequest { get; set; }
 
+#nullable enable
         [JsonProperty("prompt")]
         public string? Prompt { get; set; }
-
+#nullable disable
 
 
     }
@@ -78,9 +84,11 @@ namespace Backend
         //[JsonIgnore( = JsonIgnoreAttribute.)]
         public GeminiErrorCode? ErrorCode { get; set; }
 
+#nullable enable
         [JsonProperty("errorMessage")]
         //[JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ErrorMessage { get; set; }
+#nullable disable
     }
     #endregion
 
