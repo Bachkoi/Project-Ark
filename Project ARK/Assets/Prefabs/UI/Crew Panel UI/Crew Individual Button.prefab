@@ -346,3 +346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headshotImg: {fileID: 159093055268160695}
   crewNameTxt: {fileID: 6313179270761807935}
+  farmerHeadshot: {fileID: 21300000, guid: 2f2c7f15ecd384e46a879c396cf20020, type: 3}
+  engineerHeadshot: {fileID: 21300000, guid: 66e6a9670486ea447ac720c787d23bab, type: 3}
+  enforcerHeadshot: {fileID: 21300000, guid: 0df2e5aeba03d7c44b604e06bcae6f50, type: 3}
+  navigatorHeadshot: {fileID: 21300000, guid: 6f4e6d3377370c04f90284f8303a52fe, type: 3}
+  medicHeadshot: {fileID: 21300000, guid: 579d089d022f5a24f8e13d77de65b389, type: 3}

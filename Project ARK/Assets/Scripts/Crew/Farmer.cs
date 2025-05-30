@@ -6,6 +6,10 @@ public class Farmer : Crewmate
 {
     public float foodBonus = 15f;
 
+    public Farmer(string crewmateName) : base(crewmateName)
+    {
+        
+    }
     public override void PerformDuty()
     {
         base.PerformDuty();

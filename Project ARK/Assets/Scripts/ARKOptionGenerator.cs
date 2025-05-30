@@ -13,6 +13,8 @@ public class ARKOptionGenerator : MonoBehaviour
     [BoxGroup("Test"), SerializeField, TextArea(7, 7)] private string shipStats, nextTimeStats, remainingCrew, sanity;
 
     [SerializeField, ReadOnly] private List<ARKOption> options;
+    
+    public static event Action<List<ARKOption>> onOptionGenerated;
 
     private void OnEnable()
     {
@@ -94,6 +96,13 @@ public class ARKOptionGenerator : MonoBehaviour
                 
                 // Parse the options text into a list of ARKOption objects
                 options = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ARKOption>>(jsonContent);
+
+                foreach (var arkOption in options)
+                {
+                    arkOption.NamesToCrewmates();
+                }
+                
+                onOptionGenerated?.Invoke(options);
                 
                 Debug.Log($"Successfully unpacked {options.Count} options");
             }

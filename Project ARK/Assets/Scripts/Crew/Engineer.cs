@@ -6,6 +6,11 @@ public class Engineer : Crewmate
 {
     public float gearBonus = 7f;
 
+    public Engineer(string crewmateName) : base(crewmateName)
+    {
+        
+    }
+    
     public override void PerformDuty()
     {
         base.PerformDuty();

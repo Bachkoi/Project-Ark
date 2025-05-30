@@ -17,4 +17,33 @@ public class CrewIndividualButton : MonoBehaviour
         headshotImg.sprite = headshot;
         crewNameTxt.text = crewName;
     }
+
+    public void UpdateUI(Crewmate crewmate)
+    {
+        if (crewmate == null)
+            return;
+
+        crewNameTxt.text = crewmate.crewmateName;
+
+        if (crewmate is Farmer)
+        {
+            headshotImg.sprite = farmerHeadshot;
+        }
+        else if (crewmate is Engineer)
+        {
+            headshotImg.sprite = engineerHeadshot;
+        }
+        else if (crewmate is Enforcer)
+        {
+            headshotImg.sprite = enforcerHeadshot;
+        }
+        else if (crewmate is Navigator)
+        {
+            headshotImg.sprite = navigatorHeadshot;
+        }
+        else if (crewmate is Medic)
+        {
+            headshotImg.sprite = medicHeadshot;
+        }
+    }
 }
