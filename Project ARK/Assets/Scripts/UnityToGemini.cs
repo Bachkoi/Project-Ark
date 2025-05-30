@@ -603,7 +603,7 @@ public class UnityToGemini : MonoBehaviour
         newList.Add(foodStat);
         StatStructure fuelStat = new StatStructure();
         fuelStat.Name = "fuel";
-        fuelStat.Value = (int)ResourcesManager.Instance.fuel;
+        fuelStat.Value = (int)ResourcesManager.Instance.fuelSupply;
         newList.Add(fuelStat);
         StatStructure moraleStat = new StatStructure();
         moraleStat.Name = "morale";
