@@ -477,11 +477,6 @@ Transform:
   - {fileID: 50739433}
   m_Father: {fileID: 919382035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &517595122 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5084984709810271641, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
-  m_PrefabInstance: {fileID: 5283032437293767726}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &724313985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1099,57 +1094,6 @@ Transform:
   m_Children:
   - {fileID: 1037817361}
   m_Father: {fileID: 919382035}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1397187277
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1397187279}
-  - component: {fileID: 1397187278}
-  m_Layer: 0
-  m_Name: UnityToGemini
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1397187278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397187277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e72a29b3716e164297142e0d87d2222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  apiKey: AIzaSyCd-5xcGgEaZ8hp9irfgavLLXnhZejMGIE
-  url: 
-  lastJsonRequest: 
-  OGPrompt: 
-  updatedPrompt: 
-  WebErrorCounter: 0
-  playerName: 
---- !u!4 &1397187279
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397187277}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1676.4534, y: 1326.0947, z: -8.514743}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1577353507
 PrefabInstance:
@@ -1987,10 +1931,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5336408538370168709, guid: ca821da42dc7fae49834870942c242cb, type: 3}
-      propertyPath: arkPanel
-      value: 
-      objectReference: {fileID: 517595122}
     - target: {fileID: 8143421507968760493, guid: ca821da42dc7fae49834870942c242cb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2084,63 +2024,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2157114971436744894, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
-      propertyPath: prompt
-      value: "We are playing a game set in a post-apocalyptic society aboard a spaceship,
-        after Earth was deemed uninhabitable. I am the captain of the spaceship,
-        and you are the AI adjutant, known as ARK, on this interstellar ark. After
-        years of sailing in space, we are running out of resources and space for
-        crew members. Thus, it's your job to give me suggestions on who we should
-        cast out for the sake of the continuation of human civilization.\nHere are
-        the stats you need to take into account:\nFuel: used for moving or turning
-        the ship. Without it, the ship will maintain its current state of motion
-        forever.\nMorale: high morale leads to better cohesion, performance, and
-        resilience.\nFood: Essential for sustaining the crew.\nGears: Ship maintenance
-        and repair, tools for specific missions, and emergency technical help.\nHealth:
-        Involves preventing and treating illness/injury, providing mental support,
-        and controlling diseases from viruses beyond Earth.\nSecurity: Ensures the
-        safety and order within the ship, as well as defense against hostile encounters
-        from outside.\nExploration: The ultimate goal for the ship is to find an
-        alternate planet to Earth where humans can survive. The exploration value
-        ensures the ship can achieve this goal.\nIt is vital to understand that these
-        elements are deeply interconnected. For example, poor food quality affects
-        health and morale, and lack of proper gear can impede exploration and compromise
-        security.\nCurrently, the ship\u2019s stats are as follows: {1}\nIf nothing
-        changes, the projected stats for the next time cycle are: {2}\nCrew members
-        have 5 major roles:\nMedic: Provides Health resources to help injured/sick
-        crew members.\nNavigator: Provides Exploration resources that would allow
-        the player to get a better understanding of what a planet has to offer.\nEnforcer:
-        Provide Security and Exploration resources.\nFarmer: Provide Food resources
-        that feed the crews.\nEngineer: Provide Gears resources to fix the ship.\nHere\u2019s
-        all the remaining crew member on the ship: {3}\n{4 Actions I have already
-        taken: \u2026}\nPlease note that I may have a different opinion than yours,
-        so you also need to consider how effective my decisions are. Here is your
-        sanity level {5}; the lower it is, the more poorly I have followed your advice.
-        If it becomes too low, you should sound more resolute\nPlease give me 3 options
-        for who we should cast out of the ship, in the following JSON format:\n[\n{\n\"names\":
-        [\"Name1\", \"Name2\"],\n\"reason\": \"Reason A\"\n},\n{\n\"names\": [\"Name3\"],\n\"reason\":
-        \"Reason B\"\n},\n{\n\"names\": [\"Name4\", \"Name5\", \"Name6\"],\n\"reason\":
-        \"Reason C\"\n}\n]"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2157114971436744894, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
-      propertyPath: shipStats
-      value: Fuel 25/100 (needs minial of 0), Morale 38/100 (needs minial of 20),
-        Gears 26/100 (needs minial of 10), Food 55/100 (needs minial of 10), Health
-        75/100 (needs minial of 30), Security 20/100 (needs minial of 10), Exploration
-        25/100 (needs minial of 0)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2157114971436744894, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
-      propertyPath: nextTimeStats
-      value: 'Fuel 15/100 , Morale 27/100, Gears 17/100, Food 40/100, Health 66/100,
-        Security 10/100, Exploration 22/100. '
-      objectReference: {fileID: 0}
-    - target: {fileID: 2157114971436744894, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
-      propertyPath: remainingCrew
-      value: Jhon, Engeneer; Dave, Farmer, Alex, Farmer; Thalvok, Security; Sarah,
-        Medic; Ben, Engineer; Priya, Navigator; Omar, Farmer; Lena, Enforcer; Kenji,
-        Engineer; Maria, Farmer; Chloe, Navigator; Marcus, Farmer; Anya, Medic; David,
-        Enforcer; Yuki, Engineer; Isabella, Medic
-      objectReference: {fileID: 0}
     - target: {fileID: 3875382667787413819, guid: 67d5201229f89f3409c5d5be24a09bcb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2282,6 +2165,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7736153671747682314, guid: c9dd1a9a9ad86434e9a7403b459606ff, type: 3}
+      propertyPath: apiKey
+      value: AIzaSyCd-5xcGgEaZ8hp9irfgavLLXnhZejMGIE
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2299,4 +2186,3 @@ SceneRoots:
   - {fileID: 942959505286072869}
   - {fileID: 4669227632636442348}
   - {fileID: 5283032437293767726}
-  - {fileID: 1397187279}

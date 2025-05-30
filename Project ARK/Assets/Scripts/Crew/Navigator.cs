@@ -6,6 +6,11 @@ public class Navigator : Crewmate
 {
     public float explorationPointsPerCycle = 10f;
 
+    public Navigator(string crewmateName) : base(crewmateName)
+    {
+        
+    }
+    
     public override void PerformDuty()
     {
         base.PerformDuty();

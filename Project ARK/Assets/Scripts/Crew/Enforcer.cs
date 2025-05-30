@@ -6,6 +6,11 @@ public class Enforcer : Crewmate
 {
     public float securityPerCycle = 8f;
 
+    public Enforcer(string crewmateName) : base(crewmateName)
+    {
+        
+    }
+    
     public override void PerformDuty()
     {
         base.PerformDuty();

@@ -136,8 +136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btn: {fileID: 7999521669247159177}
   index: 0
-  popupOffset_x: -10
-  popupOffset_y: -5
+  popupOffset_x: -322.5
+  popupOffset_y: -56.2
 --- !u!1 &4709255814984458106
 GameObject:
   m_ObjectHideFlags: 0

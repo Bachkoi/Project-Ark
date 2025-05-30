@@ -6,6 +6,11 @@ public class Medic : Crewmate
 {
     public float healthPerCycle = 12f;
 
+    public Medic(string crewmateName) : base(crewmateName)
+    {
+        
+    }
+    
     public override void PerformDuty()
     {
         base.PerformDuty();
