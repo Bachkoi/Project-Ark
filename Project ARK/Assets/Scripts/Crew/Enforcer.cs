@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Enforcer : Crewmate
 {
-    public float securityBonus = 8f;
+    public float securityPerCycle = 8f;
 
     public override void PerformDuty()
     {
         base.PerformDuty();
-        ResourcesManager.Instance.AddSecurity(securityBonus);
-        Debug.Log($"{crewmateName} provides +{securityBonus} security.");
+
+        if (ResourcesManager.Instance.foodSupply >= foodConsumedPerCycle &&
+            ResourcesManager.Instance.fuelSupply >= fuelConsumedPerCycle)
+        {
+            ResourcesManager.Instance.AddSecurity(securityPerCycle);
+            Debug.Log($"{crewmateName} provided +{securityPerCycle} security.");
+        }
     }
 }

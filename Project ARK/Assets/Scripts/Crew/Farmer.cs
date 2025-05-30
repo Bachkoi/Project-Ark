@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Farmer : Crewmate
 {
-    public float foodBonus = 15f;
+    public float foodPerCycle = 15f;
 
     public override void PerformDuty()
     {
         base.PerformDuty();
-        ResourcesManager.Instance.AddFood(foodBonus);
-        Debug.Log($"{crewmateName} provides +{foodBonus} food.");
+
+        if (ResourcesManager.Instance.foodSupply >= foodConsumedPerCycle &&
+            ResourcesManager.Instance.fuelSupply >= fuelConsumedPerCycle)
+        {
+            ResourcesManager.Instance.AddFood(foodPerCycle);
+            Debug.Log($"{crewmateName} provided +{foodPerCycle} food.");
+        }
     }
 }
