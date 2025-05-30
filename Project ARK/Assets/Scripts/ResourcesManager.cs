@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ResourcesManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class ResourcesManager : MonoBehaviour
     public float foodSupply;
     public float gears;
     public float fuelSupply;
+    public float morale;
 
     private void Awake()
     {
@@ -28,6 +30,7 @@ public class ResourcesManager : MonoBehaviour
     public void AddFood(float amount) => foodSupply += amount;
     public void AddGears(float amount) => gears += amount;
     public void AddFuel(float amount) => fuelSupply += amount;
+    public void AddMorale(float amount) => morale += amount;
 
     public bool ConsumeFood(float amount)
     {
@@ -53,6 +56,17 @@ public class ResourcesManager : MonoBehaviour
 
     public void LogResources()
     {
-        Debug.Log($"Exploration: {explorationPoints}, Security: {securityLevel}, Health: {healthPoints}, Food: {foodSupply}, Gears: {gears}, Fuel: {fuelSupply}");
+        Debug.Log($"Exploration: {explorationPoints}, Security: {securityLevel}, Health: {healthPoints}, Food: {foodSupply}, Gears: {gears}, Fuel: {fuelSupply}, Morale: {morale}");
+    }
+
+    public enum ResourceType
+    {
+        Exploration,
+        Security,
+        Health,
+        Food,
+        Gears,
+        Fuel,
+        Morale
     }
 }

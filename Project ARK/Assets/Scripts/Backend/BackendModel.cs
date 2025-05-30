@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 namespace Backend
 {
@@ -65,21 +66,40 @@ namespace Backend
     [System.Serializable]
     public class ChatRequest
     {
-        [JsonProperty("character")]
-        public Character Character { get; set; }
+        //[JsonProperty("character")]
+        //public Character Character { get; set; }
 
         [JsonProperty("playerName")]
-        public string? PlayerName { get; set; }
+        public string? PlayerName { get; set; } 
+        [JsonProperty("arkSanity")]
+        public int ArkSanity { get; set; }
+        [JsonProperty("currentStats")]
+        public List<StatStructure> CurrentStats { get; set; }
+        [JsonProperty("projectedStats")]
+        public List<StatStructure> ProjectedStats { get; set; }
+        [JsonProperty("daysUntilNext")]
+        public int DaysUntilNext { get; set; }
+        [JsonProperty("playerAction")]
+        public string PlayerAction { get; set; }
 
-        [JsonProperty("aiRequest")]
-        public GeminiRequest AiRequest { get; set; }
+        //[JsonProperty("aiRequest")]
+        //public GeminiRequest AiRequest { get; set; }
 
 #nullable enable
-        [JsonProperty("prompt")]
-        public string? Prompt { get; set; }
+        //[JsonProperty("prompt")]
+        //public string? Prompt { get; set; }
 #nullable disable
 
 
+    }
+
+    [System.Serializable]
+    public class StatStructure
+    {
+        [JsonProperty("name")]
+        public string? Name { get; set; }
+        [JsonProperty("value")]
+        public int Value { get; set; }
     }
 
     public class NpcReactions
@@ -87,19 +107,24 @@ namespace Backend
         [JsonProperty("npcSentenceToPlayer")]
         public string NpcSentenceToPlayer { get; set; }
 
-        //[JsonProperty("npcInstructionText")]
-        //public string NpcInstructionText { get; set; }
+        [JsonProperty("npcDeltaSanity")]
+        public int NpcDeltaSanity { get; set; }
 
-        [JsonProperty("npcSanity")]
-        public string NpcSanity { get; set; }
+        //[JsonProperty("npcSanity")]
+        //public string NpcSanity { get; set; }
     }
 
     [System.Serializable]
     public class ChatResponse
     {
-        [JsonProperty("npcReactions")]
-        public NpcReactions NpcReactions { get; set; }
+        //[JsonProperty("npcReactions")]
+        //public NpcReactions NpcReactions { get; set; }
 
+        [JsonProperty("npcSentenceToPlayer")]
+        public string NpcSentenceToPlayer { get; set; }
+        [JsonProperty("npcDeltaSanity")]
+        public int NpcDeltaSanity { get; set; }
+        
         [JsonProperty("usageMetadata")]
         public UsageMetadata UsageMetadata { get; set; }
 
@@ -115,7 +140,58 @@ namespace Backend
     }
     #endregion
 
+    
+    #region Ark
 
+    [System.Serializable]
+    public class ArkRequest
+    {
+        [JsonProperty("playerId")]
+        public string PlayerId { get; set; }
+        [JsonProperty("turnNumber")]
+        public int TurnNumber { get; set; }
+        [JsonProperty("currentStats")]
+        public List<StatStructure> CurrentStats { get; set; }
+        [JsonProperty("projectedStats")]
+        public List<StatStructure> ProjectedStats { get; set; }
+        [JsonProperty("crewList")]
+        public List<CrewMember> CrewList { get; set; }
+        [JsonProperty("pastActions")]
+        public List<PastActions> PastActions { get; set; }
+        [JsonProperty("sanity")]
+        public int Sanity { get; set; }
+    }
+
+    [System.Serializable]
+    public class ArkResponse
+    {
+        [JsonProperty("names")]
+        public List<string> Names { get; set; }
+        [JsonProperty("reason")]
+        public string Reason { get; set; }
+    }
+    
+    
+    #endregion
+
+
+    [System.Serializable]
+    public class CrewMember
+    {
+        [JsonProperty("name")]
+        public string? Name { get; set; }
+        [JsonProperty("role")]
+        public string? Role { get; set; }
+    }
+
+    [System.Serializable]
+    public class PastActions
+    {
+        [JsonProperty("turn")]
+        public int Turn { get; set; }
+        [JsonProperty("action")]
+        public string? Action { get; set; }
+    }
 
     #region Gemini Models
     // Gemini request models
