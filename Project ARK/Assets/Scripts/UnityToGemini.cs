@@ -144,7 +144,7 @@ public class UnityToGemini : MonoBehaviour
                 //errorMessage = www.error;
                 GeminiErrorResponse geminiErrorResponse = new GeminiErrorResponse();
                 geminiErrorResponse = JsonConvert.DeserializeObject<GeminiErrorResponse>(www.downloadHandler.text);
-                geminiErrorResponse = UnpackGeminiErrorResponse(www.downloadHandler.text);
+                geminiErrorResponse = UnpackGeminiErrorResponse(www.downloadHandler.text);  
                 if (geminiErrorResponse != null)
                 {
                     if (geminiErrorResponse.Error != null)

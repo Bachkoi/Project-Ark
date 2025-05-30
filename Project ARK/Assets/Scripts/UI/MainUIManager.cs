@@ -7,9 +7,10 @@ using UnityEngine.UI;
 
 public class MainUIManager : MonoBehaviour
 {
-    [BoxGroup("ARK"), SerializeField] private GameObject arkPanel;
     [BoxGroup("Setting"), SerializeField] private GameObject settingPanel;
     [BoxGroup("Buttons"), SerializeField] private Button arkBtn, settingBtn;
+
+    public static event Action onClickArkBtn;
     
     void Start()
     {
@@ -27,7 +28,7 @@ public class MainUIManager : MonoBehaviour
 
     private void OpenArkPanel()
     {
-        arkPanel.SetActive(true);
+        onClickArkBtn?.Invoke();
     }
 
     private void OpenSettingPanel()

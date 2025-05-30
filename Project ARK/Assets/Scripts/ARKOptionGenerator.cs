@@ -16,6 +16,90 @@ public class ARKOptionGenerator : MonoBehaviour
     
     public static event Action<List<ARKOption>> onOptionGenerated;
 
+    [Button("Generate Test Crewmates")]
+    public void GenerateTestCrewmates()
+    {
+        if (string.IsNullOrEmpty(remainingCrew))
+        {
+            Debug.LogError("Remaining crew string is empty");
+            return;
+        }
+        
+        // Clear existing crewmates if any
+        if (Crewmate.AllCrewmates != null)
+        {
+            foreach (var crewmate in Crewmate.AllCrewmates.ToArray())
+            {
+                if (crewmate != null && crewmate.gameObject != null)
+                {
+                    DestroyImmediate(crewmate.gameObject);
+                }
+            }
+        }
+        
+        // Parse crew members from the string
+        string[] crewEntries = remainingCrew.Split(';');
+        
+        foreach (string entry in crewEntries)
+        {
+            string trimmedEntry = entry.Trim();
+            if (string.IsNullOrEmpty(trimmedEntry))
+                continue;
+                
+            string[] parts = trimmedEntry.Split(',');
+            if (parts.Length < 2)
+            {
+                Debug.LogWarning($"Invalid crew entry format: {trimmedEntry}");
+                continue;
+            }
+            
+            string name = parts[0].Trim();
+            string role = parts[1].Trim();
+            
+            // Create the GameObject for this crewmate
+            GameObject crewmateObj = new GameObject(name);
+            crewmateObj.transform.SetParent(transform);
+            
+            // Add the appropriate component based on role
+            Crewmate crewmate = null;
+            
+            switch (role.ToLower())
+            {
+                case "engineer":
+                    crewmate = crewmateObj.AddComponent<Engineer>();
+                    break;
+                case "farmer":
+                    crewmate = crewmateObj.AddComponent<Farmer>();
+                    break;
+                case "enforcer":
+                    crewmate = crewmateObj.AddComponent<Enforcer>();
+                    break;
+                case "medic":
+                    crewmate = crewmateObj.AddComponent<Medic>();
+                    break;
+                case "navigator":
+                    crewmate = crewmateObj.AddComponent<Navigator>();
+                    break;
+                default:
+                    crewmate = crewmateObj.AddComponent<Crewmate>();
+                    Debug.LogWarning($"Unknown role: {role}, using base Crewmate class");
+                    break;
+            }
+            
+            // Set crewmate properties
+            if (crewmate != null)
+            {
+                crewmate.crewmateName = name;
+                crewmate.health = 100f;
+                crewmate.resourcesConsumed = 1f;
+            }
+            
+            Debug.Log($"Created {role}: {name}");
+        }
+        
+        Debug.Log($"Generated {(Crewmate.AllCrewmates != null ? Crewmate.AllCrewmates.Count : 0)} crewmates");
+    }
+    
     private void OnEnable()
     {
         UnityToGemini.GeminiResponseCallback += UnpackOptionResponse;
@@ -34,23 +118,25 @@ public class ARKOptionGenerator : MonoBehaviour
     
     public void UpdatePrompt()
     {
+        Debug.Log("Updating prompt");
         updatedPrompt = prompt;
-        if (prompt.Contains("{1}"))
+        if (updatedPrompt.Contains("{1}"))
         {
+            Debug.Log("Update 1\n" + updatedPrompt);
             updatedPrompt = updatedPrompt.Replace("{1}", shipStats);
         }
 
-        if (prompt.Contains("{2}"))
+        if (updatedPrompt.Contains("{2}"))
         {
             updatedPrompt = updatedPrompt.Replace("{2}", nextTimeStats);
         }
 
-        if (prompt.Contains("{3}"))
+        if (updatedPrompt.Contains("{3}"))
         {
             updatedPrompt = updatedPrompt.Replace("{3}", remainingCrew);
         }
 
-        if (prompt.Contains("{4}"))
+        if (updatedPrompt.Contains("{4}"))
         {
             string sentence = "Actions I have already taken: ";
             if (performedOptions.Count > 0)
@@ -61,13 +147,14 @@ public class ARKOptionGenerator : MonoBehaviour
             {
                 sentence = "";
             }
-            updatedPrompt = prompt.Replace("{4}", sentence);
+            updatedPrompt = updatedPrompt.Replace("{4}", sentence);
         }
         
-        if (prompt.Contains("{5}"))
+        if (updatedPrompt.Contains("{5}"))
         {
             updatedPrompt = updatedPrompt.Replace("{5}", sanity);
         }
+        Debug.Log("Updating prompt\n" + updatedPrompt);
     }
 
     private void UnpackOptionResponse(string rawResponse, GeminiRequestType requestType)

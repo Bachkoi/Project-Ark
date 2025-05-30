@@ -1,5 +1,197 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &210889708457976298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2013688631635877116}
+  - component: {fileID: 6032718321369472501}
+  m_Layer: 0
+  m_Name: Yuki
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2013688631635877116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210889708457976298}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6032718321369472501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210889708457976298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a527af6524892c24dae0051d8bfdd026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Yuki
+  health: 100
+  resourcesConsumed: 1
+  gearBonus: 0
+--- !u!1 &216851050215812297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3273766990878371902}
+  - component: {fileID: 4098628232156519832}
+  m_Layer: 0
+  m_Name: Dave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3273766990878371902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216851050215812297}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4098628232156519832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216851050215812297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79dc845268b3934c8001c4056b4dadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Dave
+  health: 100
+  resourcesConsumed: 1
+  foodBonus: 0
+--- !u!1 &299910798519778057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6505574498810469632}
+  - component: {fileID: 3057079767392866542}
+  m_Layer: 0
+  m_Name: Anya
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6505574498810469632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299910798519778057}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3057079767392866542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299910798519778057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a95dda6ca64b74eab72f943ef9f1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Anya
+  health: 100
+  resourcesConsumed: 1
+  healingBonus: 0
+--- !u!1 &670167750881849313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 142982369702869500}
+  - component: {fileID: 4988486846952752698}
+  m_Layer: 0
+  m_Name: Chloe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &142982369702869500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670167750881849313}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4988486846952752698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670167750881849313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141957e06880ef344af7f1b6d5c240c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Chloe
+  health: 100
+  resourcesConsumed: 1
+  explorationPointsBonus: 0
 --- !u!1 &1528416145998522525
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +522,54 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1779936301929914817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2936294487792329595}
+  - component: {fileID: 625541622225629943}
+  m_Layer: 0
+  m_Name: Priya
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2936294487792329595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779936301929914817}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &625541622225629943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779936301929914817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141957e06880ef344af7f1b6d5c240c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Priya
+  health: 100
+  resourcesConsumed: 1
+  explorationPointsBonus: 0
 --- !u!1 &1917477146425221919
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +704,54 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1968272664107980097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5262087402976566137}
+  - component: {fileID: 6997456736941804075}
+  m_Layer: 0
+  m_Name: Sarah
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5262087402976566137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968272664107980097}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6997456736941804075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968272664107980097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a95dda6ca64b74eab72f943ef9f1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Sarah
+  health: 100
+  resourcesConsumed: 1
+  healingBonus: 0
 --- !u!1 &2041163606473847329
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +830,102 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3278799417337928213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6917225864351981376}
+  - component: {fileID: 7162326202762440752}
+  m_Layer: 0
+  m_Name: Lena
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6917225864351981376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3278799417337928213}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7162326202762440752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3278799417337928213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502eb15bdd9be81458f5a812006fbf67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Lena
+  health: 100
+  resourcesConsumed: 1
+  securityBonus: 0
+--- !u!1 &3547618472329786486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5272771117906380908}
+  - component: {fileID: 6055539687697871024}
+  m_Layer: 0
+  m_Name: Marcus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5272771117906380908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547618472329786486}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6055539687697871024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547618472329786486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79dc845268b3934c8001c4056b4dadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Marcus
+  health: 100
+  resourcesConsumed: 1
+  foodBonus: 0
 --- !u!1 &3733675433310474053
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +1060,54 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &3798625863235175822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3151197083216831994}
+  - component: {fileID: 2714132360373267150}
+  m_Layer: 0
+  m_Name: Isabella
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3151197083216831994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798625863235175822}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2714132360373267150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798625863235175822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a95dda6ca64b74eab72f943ef9f1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Isabella
+  health: 100
+  resourcesConsumed: 1
+  healingBonus: 0
 --- !u!1 &4511718087154818384
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +1228,115 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9033950285642011642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7909556749236826746}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &4551991024768342499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451402027000660429}
+  - component: {fileID: 2184900675087289342}
+  m_Layer: 0
+  m_Name: Thalvok
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &451402027000660429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551991024768342499}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2184900675087289342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551991024768342499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502eb15bdd9be81458f5a812006fbf67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Thalvok
+  health: 100
+  resourcesConsumed: 1
+  securityBonus: 0
+--- !u!1 &4958737322916438356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7250384852724721338}
+  - component: {fileID: 4386165674214846975}
+  m_Layer: 0
+  m_Name: Maria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7250384852724721338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4958737322916438356}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4386165674214846975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4958737322916438356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79dc845268b3934c8001c4056b4dadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Maria
+  health: 100
+  resourcesConsumed: 1
+  foodBonus: 0
 --- !u!1 &5084984709810271641
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +1371,22 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2896671854580405552}
+  - {fileID: 8200791837740561500}
+  - {fileID: 3273766990878371902}
+  - {fileID: 451402027000660429}
+  - {fileID: 5262087402976566137}
+  - {fileID: 8318728146968057531}
+  - {fileID: 2936294487792329595}
+  - {fileID: 5588353215256068008}
+  - {fileID: 6917225864351981376}
+  - {fileID: 3754672188715090421}
+  - {fileID: 7250384852724721338}
+  - {fileID: 142982369702869500}
+  - {fileID: 5272771117906380908}
+  - {fileID: 6505574498810469632}
+  - {fileID: 4653094929105145587}
+  - {fileID: 2013688631635877116}
+  - {fileID: 3151197083216831994}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -913,8 +1469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdb44bdf07533b4eb12ace7fde16d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arkPanel: {fileID: 7909556749236826746}
   optionDisplayContainer: {fileID: 8990867113463451018}
-  optionDisplayTxt: {fileID: 0}
   optionDisplayImg: {fileID: 1144242606373013486}
   optionDisplaySprites:
   - {fileID: 1509222842, guid: 62861a71c7de45143a0fe6e942380d95, type: 3}
@@ -922,6 +1478,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bc1a8c92f323f8f4f90a27fa28f3d1c0, type: 3}
   crewIndividualsContainer: {fileID: 2394899576509380189}
   crewIndividualBtnPrefab: {fileID: 2789671400410460316, guid: eba1765f61c772946a17286c13e240cf, type: 3}
+  arkOptions: []
   optionBtns:
   - {fileID: 4509402187720031136}
   - {fileID: 6907826778317600755}
@@ -943,33 +1500,35 @@ MonoBehaviour:
     you are the AI adjutant, known as ARK, on this interstellar ark. After years
     of sailing in space, we are running out of resources and space for crew members.
     Thus, it's your job to give me suggestions on who we should cast out for the
-    sake of the continuation of human civilization.\nHere are the stats you need
-    to take into account:\nFuel: used for moving or turning the ship. Without it,
-    the ship will maintain its current state of motion forever.\nMorale: high morale
-    leads to better cohesion, performance, and resilience.\nFood: Essential for sustaining
-    the crew.\nGears: Ship maintenance and repair, tools for specific missions, and
-    emergency technical help.\nHealth: Involves preventing and treating illness/injury,
-    providing mental support, and controlling diseases from viruses beyond Earth.\nSecurity:
-    Ensures the safety and order within the ship, as well as defense against hostile
-    encounters from outside.\nExploration: The ultimate goal for the ship is to find
-    an alternate planet to Earth where humans can survive. The exploration value
-    ensures the ship can achieve this goal.\nIt is vital to understand that these
-    elements are deeply interconnected. For example, poor food quality affects health
-    and morale, and lack of proper gear can impede exploration and compromise security.\nCurrently,
-    the ship\u2019s stats are as follows: {1}\nIf nothing changes, the projected
-    stats for the next time cycle are: {2}\nCrew members have 5 major roles:\nMedic:
-    Provides Health resources to help injured/sick crew members.\nNavigator: Provides
-    Exploration resources that would allow the player to get a better understanding
-    of what a planet has to offer.\nEnforcer: Provide Security and Exploration resources.\nFarmer:
-    Provide Food resources that feed the crews.\nEngineer: Provide Gears resources
-    to fix the ship.\nHere\u2019s all the remaining crew member on the ship: {3}\n{4}\nPlease
-    note that I may have a different opinion than yours, so you also need to consider
-    how effective my decisions are. Here is your sanity level {5}; the lower it is,
-    the more poorly I have followed your advice. If it becomes too low, you should
-    sound more resolute\nPlease give me 3 options for who we should cast out of the
-    ship, in the following JSON format:\n[\n{\n\"names\": [\"Name1\", \"Name2\"],\n\"reason\":
-    \"Reason A\"\n},\n{\n\"names\": [\"Name3\"],\n\"reason\": \"Reason B\"\n},\n{\n\"names\":
-    [\"Name4\", \"Name5\", \"Name6\"],\n\"reason\": \"Reason C\"\n}\n]"
+    sake of the continuation of human civilization.\r\nHere are the stats you need
+    to take into account:\r\nFuel: used for moving or turning the ship. Without it,
+    the ship will maintain its current state of motion forever.\r\nMorale: high morale
+    leads to better cohesion, performance, and resilience.\r\nFood: Essential for
+    sustaining the crew.\r\nGears: Ship maintenance and repair, tools for specific
+    missions, and emergency technical help.\r\nHealth: Involves preventing and treating
+    illness/injury, providing mental support, and controlling diseases from viruses
+    beyond Earth.\r\nSecurity: Ensures the safety and order within the ship, as well
+    as defense against hostile encounters from outside.\r\nExploration: The ultimate
+    goal for the ship is to find an alternate planet to Earth where humans can survive.
+    The exploration value ensures the ship can achieve this goal.\r\nIt is vital
+    to understand that these elements are deeply interconnected. For example, poor
+    food quality affects health and morale, and lack of proper gear can impede exploration
+    and compromise security.\r\nCurrently, the ship\u2019s stats are as follows:
+    {1}\r\nIf nothing changes, the projected stats for the next time cycle are: {2}\r\nCrew
+    members have 5 major roles:\r\nMedic: Provides Health resources to help injured/sick
+    crew members.\r\nNavigator: Provides Exploration resources that would allow the
+    player to get a better understanding of what a planet has to offer.\r\nEnforcer:
+    Provide Security and Exploration resources.\r\nFarmer: Provide Food resources
+    that feed the crews.\r\nEngineer: Provide Gears resources to fix the ship.\r\nHere\u2019s
+    all the remaining crew member on the ship: {3}\r\n{4}\r\nPlease note that I may
+    have a different opinion than yours, so you also need to consider how effective
+    my decisions are. Here is your sanity level {5}; the lower it is, the more poorly
+    I have followed your advice. If it becomes too low, you should sound more resolute.
+    Please don\u2019t give me anything else except options. Please give me 3 options
+    for who we should cast out of the ship, in the following JSON format:\r\n[\r\n{\r\n\"names\":
+    [\"Name1\", \"Name2\"],\r\n\"reason\": \"Reason A\"\r\n},\r\n{\r\n\"names\":
+    [\"Name3\"],\r\n\"reason\": \"Reason B\"\r\n},\r\n{\r\n\"names\": [\"Name4\",
+    \"Name5\", \"Name6\"],\r\n\"reason\": \"Reason C\"\r\n}\r\n]"
   updatedPrompt: 
   performedOptions: []
   shipStats: Fuel 25/100 (needs minial of 0), Morale 38/100 (needs minial of 20),
@@ -978,7 +1537,7 @@ MonoBehaviour:
     (needs minial of 0)
   nextTimeStats: 'Fuel 15/100 , Morale 27/100, Gears 17/100, Food 40/100, Health
     66/100, Security 10/100, Exploration 22/100. '
-  remainingCrew: Jhon, Engeneer; Dave, Farmer, Alex, Farmer; Thalvok, Enforcer; Sarah,
+  remainingCrew: John, Engineer; Dave, Farmer, Alex, Farmer; Thalvok, Enforcer; Sarah,
     Medic; Ben, Engineer; Priya, Navigator; Omar, Farmer; Lena, Enforcer; Kenji,
     Engineer; Maria, Farmer; Chloe, Navigator; Marcus, Farmer; Anya, Medic; David,
     Enforcer; Yuki, Engineer; Isabella, Medic
@@ -1302,6 +1861,102 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &6700221145990423654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8200791837740561500}
+  - component: {fileID: 1024380587533792195}
+  m_Layer: 0
+  m_Name: John
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8200791837740561500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700221145990423654}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1024380587533792195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700221145990423654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a527af6524892c24dae0051d8bfdd026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: John
+  health: 100
+  resourcesConsumed: 1
+  gearBonus: 0
+--- !u!1 &6778258595813233029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5588353215256068008}
+  - component: {fileID: 5029202151749145139}
+  m_Layer: 0
+  m_Name: Omar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5588353215256068008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6778258595813233029}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5029202151749145139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6778258595813233029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79dc845268b3934c8001c4056b4dadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Omar
+  health: 100
+  resourcesConsumed: 1
+  foodBonus: 0
 --- !u!1 &7041974910910162925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,7 +2077,67 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3088582903867328895}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8990867113463451018}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &7503475752321170280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4653094929105145587}
+  - component: {fileID: 3937348763316600593}
+  m_Layer: 0
+  m_Name: David
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4653094929105145587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7503475752321170280}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3937348763316600593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7503475752321170280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502eb15bdd9be81458f5a812006fbf67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: David
+  health: 100
+  resourcesConsumed: 1
+  securityBonus: 0
 --- !u!1 &7909556749236826746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +2153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2896671854580405552
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1465,6 +2180,54 @@ RectTransform:
   m_AnchoredPosition: {x: 35, y: -77}
   m_SizeDelta: {x: 1568, y: 842}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &8148396625144699123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3754672188715090421}
+  - component: {fileID: 4537411725910487680}
+  m_Layer: 0
+  m_Name: Kenji
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3754672188715090421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148396625144699123}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4537411725910487680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148396625144699123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a527af6524892c24dae0051d8bfdd026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Kenji
+  health: 100
+  resourcesConsumed: 1
+  gearBonus: 0
 --- !u!1 &8990867113463451018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,7 +2243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4834269923173029229
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1501,6 +2264,54 @@ RectTransform:
   m_AnchoredPosition: {x: 368, y: 159}
   m_SizeDelta: {x: 643, y: 351}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &9001104617990911490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8318728146968057531}
+  - component: {fileID: 8759731470372434314}
+  m_Layer: 0
+  m_Name: Ben
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8318728146968057531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9001104617990911490}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3875382667787413819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8759731470372434314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9001104617990911490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a527af6524892c24dae0051d8bfdd026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewmateName: Ben
+  health: 100
+  resourcesConsumed: 1
+  gearBonus: 0
 --- !u!1001 &187109991515746431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1597,6 +2408,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8859358083742667816, guid: c3a19b2b98c84654492982068c82ee7d, type: 3}
+      propertyPath: index
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1640,7 +2455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1648,15 +2463,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 103
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1688,11 +2503,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -51.5
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1816,6 +2631,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8859358083742667816, guid: c3a19b2b98c84654492982068c82ee7d, type: 3}
+      propertyPath: index
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1859,7 +2678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1867,15 +2686,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 103
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1907,11 +2726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -51.5
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2031,6 +2850,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8859358083742667816, guid: c3a19b2b98c84654492982068c82ee7d, type: 3}
+      propertyPath: popupOffset_x
+      value: -322.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859358083742667816, guid: c3a19b2b98c84654492982068c82ee7d, type: 3}
+      propertyPath: popupOffset_y
+      value: -56.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2074,7 +2901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2082,15 +2909,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 103
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2122,11 +2949,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 153
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -51.5
       objectReference: {fileID: 0}
     - target: {fileID: 1793607778581257386, guid: eba1765f61c772946a17286c13e240cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

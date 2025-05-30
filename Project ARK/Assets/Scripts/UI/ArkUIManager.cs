@@ -9,8 +9,8 @@ using UnityEngine.UI;
 
 public class ArkUIManager : MonoBehaviour
 {
+    [SerializeField] private GameObject arkPanel;
     [BoxGroup("Options"), SerializeField] private GameObject optionDisplayContainer;
-    [BoxGroup("Options"), SerializeField] private TextMeshProUGUI optionDisplayTxt;
     [BoxGroup("Options"), SerializeField] private Image optionDisplayImg;
     [BoxGroup("Options"), SerializeField] private List<Sprite> optionDisplaySprites;
     [BoxGroup("Options"), SerializeField, Tooltip("parent transform that crewIndividualBtnPrefab should instantiate beneath")] private Transform crewIndividualsContainer;
@@ -23,11 +23,13 @@ public class ArkUIManager : MonoBehaviour
     void OnEnable()
     {
         ARKOptionGenerator.onOptionGenerated += UpdateArkOptions;
+        MainUIManager.onClickArkBtn += ShowArkPanel;
     }
 
     private void OnDisable()
     {
         ARKOptionGenerator.onOptionGenerated -= UpdateArkOptions;
+        MainUIManager.onClickArkBtn -= ShowArkPanel;
     }
 
     void Start()
@@ -38,6 +40,12 @@ public class ArkUIManager : MonoBehaviour
         }
     }
 
+    private void ShowArkPanel()
+    {
+        arkPanel.SetActive(true);
+        optionDisplayContainer.SetActive(false);
+    }
+    
     private void UpdateArkOptions(List<ARKOption> arkOptions)
     {
         this.arkOptions = arkOptions;
