@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Navigator : Crewmate
 {
-    public float explorationPointsBonus = 10f;
+    public float explorationPointsPerCycle = 10f;
 
     public override void PerformDuty()
     {
         base.PerformDuty();
-        ResourcesManager.Instance.AddExploration(explorationPointsBonus);
-        Debug.Log($"{crewmateName} provides +{explorationPointsBonus} exploration points.");
+
+        if (ResourcesManager.Instance.foodSupply >= foodConsumedPerCycle &&
+            ResourcesManager.Instance.fuelSupply >= fuelConsumedPerCycle)
+        {
+            ResourcesManager.Instance.AddExploration(explorationPointsPerCycle);
+            Debug.Log($"{crewmateName} provided +{explorationPointsPerCycle} exploration points.");
+        }
     }
 }

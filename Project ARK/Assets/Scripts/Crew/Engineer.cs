@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Engineer : Crewmate
 {
-    public float gearBonus = 7f;
+    public float gearsPerCycle = 7f;
 
     public override void PerformDuty()
     {
         base.PerformDuty();
-        ResourcesManager.Instance.AddGears(gearBonus);
-        Debug.Log($"{crewmateName} provides +{gearBonus} gears.");
+
+        if (ResourcesManager.Instance.foodSupply >= foodConsumedPerCycle &&
+            ResourcesManager.Instance.fuelSupply >= fuelConsumedPerCycle)
+        {
+            ResourcesManager.Instance.AddGears(gearsPerCycle);
+            Debug.Log($"{crewmateName} provided +{gearsPerCycle} gears.");
+        }
     }
 }
