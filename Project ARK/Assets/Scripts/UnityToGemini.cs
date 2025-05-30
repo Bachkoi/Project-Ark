@@ -25,7 +25,9 @@ public class UnityToGemini : MonoBehaviour
     [BoxGroup("Gemini Info")] public string logTurnURL;
     [BoxGroup("Gemini Info")] public string chatEvaluateURL;
     [BoxGroup("Gemini Info")] public string putPromptURL;
-    
+
+
+    [BoxGroup("Ark Info")] public int arkSanity = 100;
     
     [BoxGroup("Gemini Info")] public string lastJsonRequest;
     [BoxGroup("Gemini Info")] public string OGPrompt;
@@ -92,6 +94,11 @@ public class UnityToGemini : MonoBehaviour
             StartCoroutine(UpdatePrompts("test", GeminiRequestType.None));
         }
 
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            StartCoroutine(SendRequestToGeminiCo("TEST", GeminiRequestType.Conversation));
+        }
+
     }
 
     public void SendRequest(string request, GeminiRequestType type)
@@ -106,20 +113,33 @@ public class UnityToGemini : MonoBehaviour
         Debug.Log("Started API Validation Request");
         string url = "";
 
-        url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + apiKey;
+        switch (type)
+        {
+            case GeminiRequestType.Conversation:
+                url = chatEvaluateURL;
+                break;
+        }
+        //url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + apiKey;
 
+        ChatRequest chatRequest = new ChatRequest();
+        chatRequest.PlayerName = playerName;
+        chatRequest.ArkSanity = Random.Range(0, 100);
+        chatRequest.CurrentStats = BuildStats();
+        chatRequest.ProjectedStats = BuildStats();
+        chatRequest.DaysUntilNext = Random.Range(0, 10);
+        chatRequest.PlayerAction = "TEST ACTION" + Random.Range(0, 100);
         // Serialize the object to JSON
-        Backend.GeminiRequest geminiRequest = new Backend.GeminiRequest();
-        geminiRequest.Contents = new List<Backend.Content>();
-        List<Backend.Part> tempParts = new List<Backend.Part>();
-        Backend.Part tempPart = new Backend.Part("\"text\":\"" + request + "\"");
-        tempParts.Add(tempPart);
-        Backend.Content tempContent = new Backend.Content();
-        tempContent.Role = "user";
-        tempContent.Parts = tempParts;
-        geminiRequest.Contents.Add(tempContent);
+        //Backend.GeminiRequest geminiRequest = new Backend.GeminiRequest();
+        //geminiRequest.Contents = new List<Backend.Content>();
+        //List<Backend.Part> tempParts = new List<Backend.Part>();
+        //Backend.Part tempPart = new Backend.Part("\"text\":\"" + request + "\"");
+        //tempParts.Add(tempPart);
+        //Backend.Content tempContent = new Backend.Content();
+        //tempContent.Role = "user";
+        //tempContent.Parts = tempParts;
+        //geminiRequest.Contents.Add(tempContent);
 
-        string jsonData = JsonConvert.SerializeObject(geminiRequest, new JsonSerializerSettings
+        string jsonData = JsonConvert.SerializeObject(chatRequest, new JsonSerializerSettings
         {
             NullValueHandling = NullValueHandling.Ignore
         });
@@ -166,6 +186,17 @@ public class UnityToGemini : MonoBehaviour
             }
             else
             {
+                // Unpack Chat Response
+                Debug.Log("NO ERRORS");
+                ChatResponse chatResponse = UnpackChatResponse(www.downloadHandler.text);
+                if (chatResponse != null)
+                {
+                    Debug.Log("UNPACKED CR");
+                    if(chatResponse.NpcSentenceToPlayer != null)
+                        Debug.Log(chatResponse.NpcSentenceToPlayer);
+                    Debug.Log("ARK DSANITY: " + chatResponse.NpcDeltaSanity);
+                }
+                
                 GeminiResponseCallback?.Invoke(www.downloadHandler.text, type);
             }
         }
@@ -324,6 +355,19 @@ public class UnityToGemini : MonoBehaviour
         }
         return geminiErrorResponse;
     }
+
+    public ChatResponse UnpackChatResponse(string rawResponse)
+    {
+        ChatResponse chatResponse = JsonConvert.DeserializeObject<ChatResponse>(rawResponse);
+        if (chatResponse != null && chatResponse.UsageMetadata != null)
+        {
+            Debug.Log(chatResponse.UsageMetadata.TotalTokenCount);
+        }
+
+        //CleanText(chatResponse.NpcReactions.NpcSentenceToPlayer);
+        return chatResponse;
+    }
+    
     #endregion
 
 
@@ -415,7 +459,7 @@ public class UnityToGemini : MonoBehaviour
     {
         updatedPrompt = OGPrompt;
         updatedPrompt.Replace("{0}", playerName);
-        updatedPrompt.Replace("{1}", playerName); // Ark Sanity
+        updatedPrompt.Replace("{1}", $"{arkSanity} out of 100"); // Ark Sanity
         updatedPrompt.Replace("{2}", playerName); // Current Status of Resources
         updatedPrompt.Replace("{3}", playerName); // Resources at next time cycle
         updatedPrompt.Replace("{4}", playerName); // Time till next cycle updates
@@ -550,6 +594,93 @@ public class UnityToGemini : MonoBehaviour
     // } }
 
 
+    public List<StatStructure> BuildStats()
+    {
+        List<StatStructure> newList = new List<StatStructure>();
+        StatStructure foodStat = new StatStructure();
+        foodStat.Name = "food";
+        foodStat.Value = (int)ResourcesManager.Instance.foodSupply;
+        newList.Add(foodStat);
+        StatStructure fuelStat = new StatStructure();
+        fuelStat.Name = "fuel";
+        fuelStat.Value = (int)ResourcesManager.Instance.fuel;
+        newList.Add(fuelStat);
+        StatStructure moraleStat = new StatStructure();
+        moraleStat.Name = "morale";
+        moraleStat.Value = (int)ResourcesManager.Instance.morale;
+        newList.Add(moraleStat);
+        StatStructure healthStat = new StatStructure();
+        healthStat.Name = "health";
+        healthStat.Value = (int)ResourcesManager.Instance.healthPoints;
+        newList.Add(healthStat);
+        StatStructure gearsStat = new StatStructure();
+        gearsStat.Name = "gears";
+        gearsStat.Value = (int)ResourcesManager.Instance.gears;
+        newList.Add(gearsStat);
+        StatStructure securityStat = new StatStructure();
+        securityStat.Name = "security";
+        securityStat.Value = (int)ResourcesManager.Instance.securityLevel;
+        newList.Add(securityStat);
+        StatStructure explorationStat = new StatStructure();
+        explorationStat.Name = "exploration";
+        explorationStat.Value = (int)ResourcesManager.Instance.explorationPoints;
+        newList.Add(explorationStat);
+        return newList;
+    }
+
+    public List<StatStructure> BuildProjectedStats()
+    {
+        List<StatStructure> newList = new List<StatStructure>();
+        
+        return newList;
+    }
+
+    public List<CrewMember> BuildCrewList()
+    {
+        List<CrewMember> newList = new List<CrewMember>();
+        foreach (Medic m in CrewManager.Instance.medics)
+        {
+            CrewMember newCrew = new CrewMember();
+            newCrew.Name = m.name;
+            newCrew.Role = "medic";
+            newList.Add(newCrew);
+        }
+        foreach (Engineer e in CrewManager.Instance.engineers)
+        {
+            CrewMember newCrew = new CrewMember();
+            newCrew.Name = e.name;
+            newCrew.Role = "engineer";
+            newList.Add(newCrew);
+        }
+        foreach (Enforcer e in CrewManager.Instance.enforcers)
+        {
+            CrewMember newCrew = new CrewMember();
+            newCrew.Name = e.name;
+            newCrew.Role = "Enforcer";
+            newList.Add(newCrew);
+        }
+        foreach (Farmer f in CrewManager.Instance.farmers)
+        {
+            CrewMember newCrew = new CrewMember();
+            newCrew.Name = f.name;
+            newCrew.Role = "farmer";
+            newList.Add(newCrew);
+        }
+        foreach (Navigator n in CrewManager.Instance.navigators)
+        {
+            CrewMember newCrew = new CrewMember();
+            newCrew.Name = n.name;
+            newCrew.Role = "navigator";
+            newList.Add(newCrew);
+        }
+
+        return newList;
+    }
+
+    public void CurrentStats()
+    {
+        
+    }
 
 
 
